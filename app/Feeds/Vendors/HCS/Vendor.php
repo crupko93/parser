@@ -12,13 +12,6 @@ class Vendor extends SitemapHttpProcessor
 
     public function filterProductLinks( Link $link ): bool
     {
-        //$path = parse_url($link->getUrl())["path"];
-        //$explode = explode('/', $path);
-
         return str_contains( $link->getUrl(), "products" );
     }
-
-    /*public array $custom_products = [
-        'https://himalayancrystallitez.com/collections/100-pure-essential-oils/products/100-pure-essential-oils-1-2oz-eucalyptus'
-    ];*/
 }
