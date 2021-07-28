@@ -12,6 +12,17 @@ class Vendor extends SitemapHttpProcessor
 
     public function filterProductLinks( Link $link ): bool
     {
-        return str_contains( $link->getUrl(), "products" );
+        if ( str_contains( $link->getUrl(), "gift-card" ) )
+        {
+            return false;
+        }
+        elseif ( str_contains( $link->getUrl(), "products" ) )
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
